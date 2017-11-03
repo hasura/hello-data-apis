@@ -1,0 +1,11 @@
+registry: {{ cluster.metadata.registry|json }}
+remotes:
+  {{ cluster.name }}:
+    <<: {}
+    {{ cluster.metadata.namespaces.user }}.app:
+      app:
+        dockerfile: services/app/Dockerfile
+        path: services/app
+
+
+
